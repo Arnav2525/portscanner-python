@@ -35,7 +35,7 @@ def send_ntp_query(ip):
 def scan_udp_ports(ip, start_port, end_port):
     open_ports = []
     for port in range(start_port, end_port + 1):
-        print(f"Scanning UDP port {port}...")  # ✅ Debug print
+        print(f"Scanning UDP port {port}...")  
         if port == 53 and send_dns_query(ip):
             service = get_service_name(port)
             open_ports.append(f"UDP Port {port} is open ({service})")
